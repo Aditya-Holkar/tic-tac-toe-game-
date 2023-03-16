@@ -1,0 +1,10 @@
+<header class="pt-5">
+    <app-dashboard [turn]="game.turn" [winner]="game.winner"></app-dashboard>
+</header>
+<main class="text-center">
+    <app-game #game></app-game>
+    <app-again-button
+        *ngIf="!game.isGameGoOn"
+        (buttonEmitter)="game.tryAgain()"
+    ></app-again-button>
+</main>
